@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Triangles</title>
+    <link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+    <header>
+        <h1>Learn Triangles</h1>
+    </header>
+    <div class='tab'>
+        <span class='tabButton' id='defaultButton' onclick='changeTabs(event, "#calculator")'><h4>calculator</h4></span>
+        <span class='tabButton' onclick='changeTabs(event, "#quiz")'><h4>quiz</h4></span>
+        <span class='tabButton' onclick='changeTabs(event, "#learn")'><h4>learn</h4></span>
+    </div>
+
+    <div class='tabContent' id='calculator'>
+        <br>
+        <div>
+            <b>Calculate area of triangle</b>
+            <form id='calcArea'>
+                <label>using height and base</label>
+                <input class='inputSmol' type='number' id='b' placeholder='b' required>
+                <input class='inputSmol' type='number' id='h' placeholder='h' required> <br>
+                <input type='submit' class='btn' value='calculate'>
+                <input type='reset' class='btn' value='clear'>           
+            </form>
+            OR
+            <form id='calcAreaWithSides'>
+                <label>using lengths of 3 sides</label>
+                <input class='inputSmol' type='number' id='firstSide' placeholder='x' required>
+                <input class='inputSmol' type='number' id='secondSide' placeholder='y' required>
+                <input class='inputSmol' type='number' id='thirdSide' placeholder='z' required> <br>            
+                <input type='submit' class='btn' value='calculate'>
+                <input type='reset' class='btn' value='clear'>           
+            </form>
+            <div>
+                Answer: <i>
+                            <span id='area'></span>
+                        </i><hr>
+            </div>
+        </div>
+    
+        <div>
+            <b>Enter lengths of two legs(perpendicular and base) of a right triangle and find out length of hypotenuse.</b>
+            <form id='calcHypotenuse'>
+                <input class='inputSmol' type='number' id='perpendicular' placeholder='p' required>
+                <input class='inputSmol' type='number' id='base' placeholder='b' required>
+                <input type='submit' class='btn' value='calculate'>
+                <input type='reset' class='btn' value='clear'>
+            </form>
+            <div>
+                Answer: <i>
+                            <span id='hypotenuse'></span>
+                        </i><hr>
+            </div>
+        </div>
+
+        <div>
+            <b>Input three angles and find out if they belong to a triangle</b>
+            <form id='checkSum'>
+                <input class='inputSmol' type='number' id='angleOne' placeholder="a1" required>
+                <input class='inputSmol' type='number' id='angleTwo' placeholder="a2" required>
+                <input class='inputSmol' type='number' id='angleThree' placeholder="a3" required>
+                <input type='submit' class='btn' value='check'>
+                <input type='reset' class='btn' value='clear'>
+            </form>
+            <div>
+                Answer: These angles <i>
+                                        <span id='triangleOrNot'>...</span>
+                                    </i>
+            </div>
+        </div>
+    </div>
+
+    <div class='tabContent' id='quiz'>
+        <h1>Score: <span id='score'>0</span>/16</h1>
+        <div>
+            <b>Will the following angles form an obtuse triangle? 30°, 50°, 100°</b>
+            <form id='checkObtuseTriangle'>
+                <input type='radio' name='checkObtuse' value='yes' id='isObtuse' required>Yes
+                <input type='radio' name='checkObtuse' value='no' required>No<br>
+                <input type='submit' class='btn' value='check answer'>
+            </form>
+            <div>
+                <i>
+                    <span id='obtuseTriangle'></span>
+                </i><hr>
+            </div>
+        </div>
+
+        <div>
+           <b> Will the following angles form a right triangle? 50°, 95°, 35°</b>
+            <form id='checkRightTriangle'>
+                <input type='radio' name='checkRight' value='yes' required>Yes
+                <input type='radio' name='checkRight' value='no' id='isNotRight' required>No<br>
+                <input type='submit' class='btn' value='check answer'>
+            </form>
+            <div>
+               <i>
+                <span id='rightTriangle'></span>
+               </i><hr>
+            </div>
+        </div>
+
+        <div>
+            <b>Will the following angles form an acute triangle? 95°, 45°, 40°</b>
+            <form id='checkAcuteTriangle'>
+                <input type='radio' name='checkAcute' value='yes' required>Yes
+                <input type='radio' name='checkAcute' value='no' id='isNotAcute' required>No<br>
+                <input type='submit' class='btn' value='check answer'>
+            </form>
+            <div>
+                <i>
+                    <span id='acuteTriangle'></span>
+                </i><hr>
+            </div>
+        </div>
+
+        <div>
+            <b>If two angles of a triangle are <span id='randomAngOne'></span>° and <span id='randomAngTwo'></span>°. What would be the third angle?</b>
+            <form id='findThirdAngle'>
+                <input type='number' class='inputSmol' id='thirdAngleInput' required>
+                <input type='submit' class='btn' value='check'>
+            </form>
+            <div>
+                <i>
+                    <span id='thirdAngle'></span>
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <div class='tabContent' id='learn'>
+        <h2>Area using height and base</h2>
+        area of triange = 1/2 x base x height<br><hr>
+        <p>
+            <h2>Area using lengths of 3 sides</h2>
+            Suppose a, b and c are lengths of 3 sides of a triangle.<br>
+            s(semi perimeter of a triangle) = sum of all 3 sides / 2<br>
+            <img class='heron' src='https://www.gstatic.com/education/formulas2/-1/en/heron_s_formula.svg' alt="can't load image"><hr>
+        </p>
+        <p>
+            <h2>Types of triangles</h2>
+            <ul>
+                <li>A triangle having a right angle(90°) is called a right angled triangle.</li>
+                <li>A triangle with all angles measuring less than 90° is called an acute triangle.</li>
+                <li>A triangle with an angle measuring more than 90° is called an obtuse angle.</li>
+            </ul>
+            <hr>
+        </p>
+        <p>
+            <h2>Sum of angles of a triangle</h2>
+            sum of all 3 angles of a triangle is always 180°.
+        </p>
+    </div>
+<script src='./index.js'></script>
+</body>
+</html>
